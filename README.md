@@ -47,3 +47,36 @@ SimpleAudioPlayer/
 ├── README.md
 ├── LICENSE
 └── .gitignore
+```
+
+## How to Run
+
+1. Install the JUCE Framework.
+2. Open `SimpleAudioPlayer.jucer` using Projucer.
+3. Save and open the project in Visual Studio.
+4. Build and run the project.
+5. Load `.mp3` or `.wav` files and start using the audio player.
+
+## What I Learned
+
+- Building desktop applications using C++ and JUCE
+- Working with audio playback and transport controls
+- Designing GUI components and handling user interactions
+- Implementing playlist, markers, waveform, and looping features
+- Managing multiple audio sources using a mixer-based architecture
+- Applying object-oriented programming in a real project
+- Debugging and improving application behavior
+- Collaborating in a 3-member development team
+
+## Future Improvements
+
+- Add drag-and-drop audio file loading
+- Save and load full playlists
+- Add more audio format support
+- Improve responsive layout for different screen sizes
+- Add keyboard shortcuts
+- Add a cleaner release build for end users
+
+## License
+
+This project is licensed under the MIT License.
