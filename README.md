@@ -2,7 +2,7 @@
 
 A modern desktop audio player built with **C++** and the **JUCE Framework**.
 
-This project was developed as a team project by 3 members. The application supports dual audio players, waveform visualization, playlists, markers, A-B looping, shuffle mode, speed control, and session saving.
+This project was developed as a team project by 4 members. The application supports dual audio players, waveform visualization, playlists, markers, A-B looping, shuffle mode, speed control, and session saving.
 
 ## Features
 
@@ -66,7 +66,7 @@ SimpleAudioPlayer/
 - Managing multiple audio sources using a mixer-based architecture
 - Applying object-oriented programming in a real project
 - Debugging and improving application behavior
-- Collaborating in a 3-member development team
+- Collaborating in a 4-member development team
 
 ## Future Improvements
 
