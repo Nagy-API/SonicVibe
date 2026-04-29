@@ -14,10 +14,11 @@ This project was developed as a team project by 3 members. The application suppo
 - Playback progress line synced with the waveform
 - Add and delete markers to jump to specific timestamps
 - A-B looping to repeat a selected part of a track
-- Shuffle mode for random playback
+- Shuffle mode for random playback without immediately repeating the same track
 - Speed control from 0.5x to 2.0x
 - Volume and mute controls
 - Session saving for last file, position, and loop state
+- Dark-themed user interface with separate playlist and marker sections
 
 ## Tech Stack
 
@@ -26,16 +27,23 @@ This project was developed as a team project by 3 members. The application suppo
 - Object-Oriented Programming
 - GUI Development
 - Audio Processing
+- Event-Driven Programming
 
 ## Project Structure
 
 ```text
 SimpleAudioPlayer/
-├── Main.cpp
-├── MainComponent.h
-├── MainComponent.cpp
-├── PlayerGUI.h
-├── PlayerGUI.cpp
-├── PlayerAudio.h
-├── PlayerAudio.cpp
-└── README.md
+├── Source/
+│   ├── Main.cpp
+│   ├── MainComponent.h
+│   ├── MainComponent.cpp
+│   ├── PlayerGUI.h
+│   ├── PlayerGUI.cpp
+│   ├── PlayerAudio.h
+│   ├── PlayerAudio.cpp
+│   ├── WaveformDisplay.h
+│   └── WaveformDisplay.cpp
+├── SimpleAudioPlayer.jucer
+├── README.md
+├── LICENSE
+└── .gitignore
