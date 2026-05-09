@@ -13,7 +13,6 @@ public:
         // Create and show the main window
         mainWindow = std::make_unique<MainWindow>(getApplicationName());
     }
-
     void shutdown() override
     {
         mainWindow = nullptr; // Clean up
@@ -34,7 +33,6 @@ private:
             centreWithSize(1350, 800);
             setVisible(true);
         }
-
         void closeButtonPressed() override
         {
             juce::JUCEApplication::getInstance()->systemRequestedQuit();
