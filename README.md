@@ -1,82 +1,93 @@
-# Simple Audio Player
+# SonicVibe
 
-A modern desktop audio player built with **C++** and the **JUCE Framework**.
+SonicVibe is a JUCE-based desktop audio player built for playlist playback, waveform seeking, synced lyrics, cue markers, tempo control, A/B looping, and a neon intro experience.
 
-This project was developed as a team project by 4 members. The application supports dual audio players, waveform visualization, playlists, markers, A-B looping, shuffle mode, speed control, and session saving.
+## Highlights
 
-## Features
-
-- Two independent audio players
-- Play, pause, stop, restart, start, and end controls
-- Forward and backward seeking by 10 seconds
-- Playlist support with single-click and double-click playback
-- Waveform visualization using `AudioThumbnail`
-- Playback progress line synced with the waveform
-- Add and delete markers to jump to specific timestamps
-- A-B looping to repeat a selected part of a track
-- Shuffle mode for random playback without immediately repeating the same track
-- Speed control from 0.5x to 2.0x
-- Volume and mute controls
-- Session saving for last file, position, and loop state
-- Dark-themed user interface with separate playlist and marker sections
+- Dual Pulse player views: Pulse One, Pulse Two, and Dual View
+- Playlist loading, saving, reordering, restoring, and queue management
+- Waveform seek display
+- Synced lyrics panel
+- Cue markers with jump support
+- Tempo control powered by SoundTouch
+- A/B loop, repeat, shuffle, mute, and navigation controls
+- Neon WebView intro video using `SonicVibeAssets/intro.mp4`
+- Polished About modal with SonicVibe branding
 
 ## Tech Stack
 
 - C++
-- JUCE Framework
-- Object-Oriented Programming
-- GUI Development
-- Audio Processing
-- Event-Driven Programming
+- JUCE
+- Visual Studio 2022
+- SoundTouch
+- WebView2 / `WebBrowserComponent` for intro playback
 
 ## Project Structure
 
 ```text
-SimpleAudioPlayer/
+SonicVibe/
 ├── Source/
 │   ├── Main.cpp
-│   ├── MainComponent.h
 │   ├── MainComponent.cpp
-│   ├── PlayerGUI.h
-│   ├── PlayerGUI.cpp
-│   ├── PlayerAudio.h
+│   ├── MainComponent.h
 │   ├── PlayerAudio.cpp
-│   ├── WaveformDisplay.h
-│   └── WaveformDisplay.cpp
-├── SimpleAudioPlayer.jucer
-├── README.md
-├── LICENSE
-└── .gitignore
+│   ├── PlayerAudio.h
+│   ├── PlayerGUI.cpp
+│   ├── PlayerGUI.h
+│   ├── WaveformDisplay.cpp
+│   └── WaveformDisplay.h
+├── SonicVibeAssets/
+│   ├── about_logo.png
+│   └── intro.mp4
+├── ThirdParty/
+│   └── SoundTouch/
+└── SonicVibe.jucer
 ```
 
-## How to Run
+## Required JUCE Modules
 
-1. Install the JUCE Framework.
-2. Open `SimpleAudioPlayer.jucer` using Projucer.
-3. Save and open the project in Visual Studio.
-4. Build and run the project.
-5. Load `.mp3` or `.wav` files and start using the audio player.
+Make sure these modules are enabled in Projucer:
 
-## What I Learned
+- `juce_audio_basics`
+- `juce_audio_devices`
+- `juce_audio_formats`
+- `juce_audio_utils`
+- `juce_core`
+- `juce_data_structures`
+- `juce_events`
+- `juce_graphics`
+- `juce_gui_basics`
+- `juce_gui_extra`
+- `juce_video`
 
-- Building desktop applications using C++ and JUCE
-- Working with audio playback and transport controls
-- Designing GUI components and handling user interactions
-- Implementing playlist, markers, waveform, and looping features
-- Managing multiple audio sources using a mixer-based architecture
-- Applying object-oriented programming in a real project
-- Debugging and improving application behavior
-- Collaborating in a 4-member development team
+For the intro video on Windows, `juce_gui_extra` should have WebView2 enabled:
 
-## Future Improvements
+```text
+JUCE_WEB_BROWSER = Enabled
+JUCE_USE_WIN_WEBVIEW2 = Enabled
+JUCE_USE_WIN_WEBVIEW2_WITH_STATIC_LINKING = Disabled
+```
 
-- Add drag-and-drop audio file loading
-- Save and load full playlists
-- Add more audio format support
-- Improve responsive layout for different screen sizes
-- Add keyboard shortcuts
-- Add a cleaner release build for end users
+## Build Instructions
 
-## License
+1. Open `SonicVibe.jucer` in Projucer.
+2. Confirm the JUCE module paths are correct.
+3. Save and open in Visual Studio 2022.
+4. Build the `SonicVibe_App` target.
+5. Keep `SonicVibeAssets/intro.mp4` and `SonicVibeAssets/about_logo.png` inside the project folder.
 
-This project is licensed under the MIT License.
+## Git LFS
+
+This project uses Git LFS for video/audio assets such as `intro.mp4`.
+
+Before pushing for the first time:
+
+```bash
+git lfs install
+git lfs track "*.mp4"
+git add .gitattributes
+```
+
+## Notes
+
+Build outputs, Visual Studio cache files, and generated intro frame fallback assets are intentionally ignored.

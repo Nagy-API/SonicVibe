@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="I9jPqZ" name="SonicVibe" projectType="guiapp" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" companyName="Nagy"
+              bundleIdentifier="com.nagy.sonicvibe">
+  <MAINGROUP id="aNtGWT" name="SonicVibe">
+    <GROUP id="{447E19A8-AD1B-CE4F-361D-A7F133A805F6}" name="Source">
+      <FILE id="Fnkqgg" name="sse_optimized.cpp" compile="1" resource="0"
+            file="ThirdParty/SoundTouch/source/SoundTouch/sse_optimized.cpp"/>
+      <FILE id="jDYySn" name="mmx_optimized.cpp" compile="1" resource="0"
+            file="ThirdParty/SoundTouch/source/SoundTouch/mmx_optimized.cpp"/>
+      <FILE id="zjdIGj" name="cpu_detect_x86.cpp" compile="1" resource="0"
+            file="ThirdParty/SoundTouch/source/SoundTouch/cpu_detect_x86.cpp"/>
+      <FILE id="Z3gC4l" name="PlayerGUI.cpp" compile="1" resource="0" file="Source/PlayerGUI.cpp"/>
+      <FILE id="Ii74Q3" name="PlayerGUI.h" compile="0" resource="0" file="Source/PlayerGUI.h"/>
+      <FILE id="HMy5KH" name="PlayerAudio.cpp" compile="1" resource="0" file="Source/PlayerAudio.cpp"/>
+      <FILE id="dN5gZv" name="PlayerAudio.h" compile="0" resource="0" file="Source/PlayerAudio.h"/>
+      <FILE id="aRYj7Q" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+      <FILE id="Y29gOi" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
+      <FILE id="O7xf1R" name="MainComponent.cpp" compile="1" resource="0"
+            file="Source/MainComponent.cpp"/>
+    </GROUP>
+    <FILE id="WWGOV5" name="AAFilter.cpp" compile="1" resource="0" file="ThirdParty/SoundTouch/source/SoundTouch/AAFilter.cpp"/>
+    <FILE id="g0i5Or" name="FIFOSampleBuffer.cpp" compile="1" resource="0"
+          file="ThirdParty/SoundTouch/source/SoundTouch/FIFOSampleBuffer.cpp"/>
+    <FILE id="lcnLu9" name="FIRFilter.cpp" compile="1" resource="0" file="ThirdParty/SoundTouch/source/SoundTouch/FIRFilter.cpp"/>
+    <FILE id="iBmeWN" name="InterpolateCubic.cpp" compile="1" resource="0"
+          file="ThirdParty/SoundTouch/source/SoundTouch/InterpolateCubic.cpp"/>
+    <FILE id="LBFpRJ" name="InterpolateLinear.cpp" compile="1" resource="0"
+          file="ThirdParty/SoundTouch/source/SoundTouch/InterpolateLinear.cpp"/>
+    <FILE id="yPvBDr" name="InterpolateShannon.cpp" compile="1" resource="0"
+          file="ThirdParty/SoundTouch/source/SoundTouch/InterpolateShannon.cpp"/>
+    <FILE id="ROIrHo" name="RateTransposer.cpp" compile="1" resource="0"
+          file="ThirdParty/SoundTouch/source/SoundTouch/RateTransposer.cpp"/>
+    <FILE id="lPEp97" name="SoundTouch.cpp" compile="1" resource="0" file="ThirdParty/SoundTouch/source/SoundTouch/SoundTouch.cpp"/>
+    <FILE id="g2nk3A" name="TDStretch.cpp" compile="1" resource="0" file="ThirdParty/SoundTouch/source/SoundTouch/TDStretch.cpp"/>
+    <FILE id="IfcWH6" name="WaveformDisplay.cpp" compile="1" resource="0"
+          file="Source/WaveformDisplay.cpp"/>
+    <FILE id="uFfrcM" name="WaveformDisplay.h" compile="0" resource="0"
+          file="Source/WaveformDisplay.h"/>
+  </MAINGROUP>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_video" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+  </MODULES>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_USE_MP3AUDIOFORMAT="1"
+               JUCE_USE_FLAC="1" JUCE_USE_OGGVORBIS="1" JUCE_USE_WINDOWS_MEDIA_FORMAT="1"
+               JUCE_WEB_BROWSER="1" JUCE_USE_WIN_WEBVIEW2="1" JUCE_USE_WIN_WEBVIEW2_WITH_STATIC_LINKING="0"/>
+  <EXPORTFORMATS>
+    <VS2022 targetFolder="SonicVibe" extraCompilerFlags="/wd4458 /wd4702">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="SonicVibe" headerPath="N:\Coding\programming\VS community\SonicVibe\ThirdParty\SoundTouch\include&#10;N:\Coding\programming\VS community\SonicVibe\ThirdParty\SoundTouch\source"
+                       extraCompilerFlags="/I&quot;N:\Coding\programming\VS community\SonicVibe\ThirdParty\SoundTouch\include&quot; /I&quot;N:\Coding\programming\VS community\SonicVibe\ThirdParty\SoundTouch\source&quot;"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="SonicVibe" headerPath="N:\Coding\programming\VS community\SonicVibe\ThirdParty\SoundTouch\include&#10;N:\Coding\programming\VS community\SonicVibe\ThirdParty\SoundTouch\source"
+                       extraCompilerFlags="/I&quot;N:\Coding\programming\VS community\SonicVibe\ThirdParty\SoundTouch\include&quot; /I&quot;N:\Coding\programming\VS community\SonicVibe\ThirdParty\SoundTouch\source&quot;"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_gui_basics" path="N:\juce-8.0.10-windows\JUCE\modules"/>
+        <MODULEPATH id="juce_graphics" path="N:\juce-8.0.10-windows\JUCE\modules"/>
+        <MODULEPATH id="juce_events" path="N:\juce-8.0.10-windows\JUCE\modules"/>
+        <MODULEPATH id="juce_core" path="N:\juce-8.0.10-windows\JUCE\modules"/>
+        <MODULEPATH id="juce_data_structures" path="N:\juce-8.0.10-windows\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_basics" path="N:\juce-8.0.10-windows\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_devices" path="N:\juce-8.0.10-windows\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_formats" path="N:\juce-8.0.10-windows\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_processors" path="N:\juce-8.0.10-windows\JUCE\modules"/>
+        <MODULEPATH id="juce_gui_extra" path="N:\juce-8.0.10-windows\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_utils" path="N:\juce-8.0.10-windows\JUCE\modules"/>
+        <MODULEPATH id="juce_video" path="../../../../juce-8.0.10-windows/JUCE/modules"/>
+      </MODULEPATHS>
+    </VS2022>
+  </EXPORTFORMATS>
+</JUCERPROJECT>
