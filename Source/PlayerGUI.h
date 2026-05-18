@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include <JuceHeader.h>
 #include "PlayerAudio.h"
@@ -19,16 +19,16 @@ public:
         if (markers == nullptr || row < 0 || row >= static_cast<int>(markers->size()))
             return;
 
-        g.fillAll(juce::Colour::fromRGB(2, 4, 15));
+        g.fillAll(juce::Colour::fromRGB(4, 5, 16));
 
         auto rowArea = juce::Rectangle<float>(5.0f, 3.0f, static_cast<float>(width - 10), static_cast<float>(height - 6));
         if (rowIsSelected)
         {
-            juce::ColourGradient rowGrad(juce::Colour::fromRGB(64, 28, 110).withAlpha(0.86f), rowArea.getX(), rowArea.getCentreY(),
-                juce::Colour::fromRGB(8, 92, 140).withAlpha(0.80f), rowArea.getRight(), rowArea.getCentreY(), false);
+            juce::ColourGradient rowGrad(juce::Colour::fromRGB(78, 36, 98).withAlpha(0.86f), rowArea.getX(), rowArea.getCentreY(),
+                juce::Colour::fromRGB(24, 80, 98).withAlpha(0.80f), rowArea.getRight(), rowArea.getCentreY(), false);
             g.setGradientFill(rowGrad);
             g.fillRoundedRectangle(rowArea, 7.0f);
-            g.setColour(juce::Colour::fromRGB(255, 55, 214).withAlpha(0.28f));
+            g.setColour(juce::Colour::fromRGB(255, 78, 196).withAlpha(0.28f));
             g.drawRoundedRectangle(rowArea, 7.0f, 1.0f);
         }
 
@@ -85,17 +85,17 @@ public:
         if (isCurrent)
         {
             auto glow = juce::Rectangle<float>(8.0f, 5.0f, static_cast<float>(width - 16), static_cast<float>(height - 10));
-            juce::ColourGradient gradient(juce::Colour::fromRGB(8, 92, 140).withAlpha(0.92f), glow.getX(), glow.getCentreY(),
-                juce::Colour::fromRGB(5, 16, 38).withAlpha(0.78f), glow.getRight(), glow.getCentreY(), false);
+            juce::ColourGradient gradient(juce::Colour::fromRGB(44, 120, 132).withAlpha(0.92f), glow.getX(), glow.getCentreY(),
+                juce::Colour::fromRGB(22, 44, 58).withAlpha(0.78f), glow.getRight(), glow.getCentreY(), false);
             g.setGradientFill(gradient);
             g.fillRoundedRectangle(glow, 18.0f);
 
-            g.setColour(juce::Colour::fromRGB(38, 231, 255).withAlpha(0.42f));
+            g.setColour(juce::Colour::fromRGB(110, 235, 245).withAlpha(0.42f));
             g.drawRoundedRectangle(glow, 18.0f, 1.6f);
         }
         else if (rowIsSelected)
         {
-            g.setColour(juce::Colour::fromRGB(12, 18, 58).withAlpha(0.68f));
+            g.setColour(juce::Colour::fromRGB(35, 48, 60).withAlpha(0.68f));
             g.fillRoundedRectangle(juce::Rectangle<float>(10.0f, 8.0f, static_cast<float>(width - 20), static_cast<float>(height - 16)), 12.0f);
         }
 
@@ -212,6 +212,7 @@ private:
     juce::TextButton autoLyricsButton{ "Auto Lyrics On" };
     juce::TextButton loadLyricsButton{ "Load Lyrics" };
     juce::TextButton clearLyricsButton{ "Clear Lyrics" };
+    juce::TextButton resetLyricsOffsetButton{ "Reset" };
 
     juce::TextButton playPauseButton{ "Play" };
     juce::TextButton stopButton{ "Stop" };
@@ -240,10 +241,12 @@ private:
     juce::Label speedLabel{ {}, "Tempo: 1.00x" };
     juce::Label queueStatusLabel{ {}, "Playlist: 0 tracks" };
     juce::Label lyricsStatusLabel{ {}, "Lyrics: none" };
+    juce::Label lyricsOffsetLabel{ {}, "Offset: 0 ms" };
 
     juce::Slider volumeSlider;
     juce::Slider positionSlider;
     juce::Slider speedSlider;
+    juce::Slider lyricsOffsetSlider;
 
     std::vector<juce::File> playlist;
     juce::ListBox playlistBox{ "Playlist", this };
@@ -268,6 +271,7 @@ private:
     juce::File currentLyricsFile;
     juce::File currentAudioFile;
     bool autoLyricsEnabled = true;
+    double lyricsOffsetSeconds = 0.0;
 
     bool isPlaying = false;
     bool isMuted = false;
@@ -314,6 +318,8 @@ private:
     void updateQueueStatusLabel();
     void applyTempoFromSlider();
     void updateLyricsStatusLabel();
+    void updateLyricsOffsetLabel();
+    void setLyricsOffsetMilliseconds(int offsetMs);
     void updateCurrentLyric();
     void setCurrentLyricIndex(int newIndex);
     void centerLyricsOnCurrentLine();
